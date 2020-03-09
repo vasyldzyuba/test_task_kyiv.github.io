@@ -230,6 +230,9 @@ main {
                     width: 21px;
                     height: 36px;
                     margin: 9px 0 0 0;
+                    &:hover{
+                   cursor: pointer;
+                  }
                 }
 
                 .dots-cont {
