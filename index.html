@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hexa Test Task</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-inner-cont">
+            <div class="header-inner-item"><span class="logo">LOGO</span>
+                <p>Фабрика фотообоев в КИЕВЕ
+                    изготовЛение фотообоев</p>
+            </div>
+            <div class="header-third-div"><span>044 278 21 00</span><button type="button">Обратный звонок</button></div>
+        </div>
+
+    </header>
+    <main id="main">
+        <nav>
+            <ul>
+                <li class="right-bordered">Главная</li>
+                <li class="ul-second-li right-bordered2">Для Детской</li>
+                <li class="right-bordered3">Для спальни</li>
+                <li class="right-bordered4">ДЛя кухни</li>
+                <li>контакты</li>
+            </ul>
+        </nav>
+        <div class="main-slider-text">
+            <div class="slider-text-box">
+                <p>фотообои</p>
+            </div>
+            <div class="slider-small-text">
+                <p id="for">Для зала</p>
+                <img src="images/Rectangle_70_copy_5.png" alt="underline">
+            </div>
+            <div class="slider-price-text">
+                <span class="from">ОТ</span><span class="price" id="price">50 </span><img src="images/50_$/м2.png" alt="price" id="m2">
+            </div>
+            <div class="slider-goods-amount">
+                <p id="for2">Более 6000 идей фотообоев
+                    для ГОСТИНОЙ
+                </p>
+                <button type="button">смотреть идеи</button>
+                <div class="slider-buttons">
+                    <img src="images/Forma_1_copy.png" class="left-arrow" id="left-arrow" alt="left-arrow">
+                    <div class="dots-cont">
+                        <div class="dot-item1 dot-item" id="dot-item1">
+                            <div class="active-dot" id="active-dot"></div>
+                        </div>
+                        <div class="dot-item2 dot-item" id="dot-item2">
+                            <div id="active-dot2"></div>
+                        </div>
+                        <div class="dot-item3 dot-item" id="dot-item3">
+                            <div id="active-dot3"></div>
+                        </div>
+                        <div class="dot-item4 dot-item" id="dot-item4">
+                            <div id="active-dot4"></div>
+                        </div>
+                    </div>
+                    <img src="images/Forma_1.png" class="right-arrow" id="right-arrow" alt="right-arrow">
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <div class="main-cards-container">
+        <div class="cards-wrapper">
+            <div class="cards">
+                <img src="images/Shape_10.png" alt="image card">
+                <p class="card-bold-text">Печатаем что угодно</p>
+                <p class="card-small-text">Все фотообои мы изготавливаем под заказ на собственном оборудовании. По
+                    этому можем напечатать
+                    совершенно все,
+                    что вы захотите</p>
+            </div>
+            <div class="cards">
+                <img src="images/Shape_11.png" alt="image card">
+                <p class="card-bold-text">Любые размеры</p>
+                <p class="card-small-text">Профессиональное оборудование позволяет напечатать фотообои совершенно
+                    любого размера. Можем заклеить как часть, таки все стену без ограничений.</p>
+            </div>
+            <div class="cards">
+                <img src="images/Shape_12.png" alt="image card">
+                <p class="card-bold-text">Изготовление за 1 день</p>
+                <p class="card-small-text">В среднем, изготовление одних фотообоев среднего размера занимает не
+                    более одного дня!</p>
+            </div>
+            <div class="cards">
+                <img src="images/Shape_13.png" alt="image card">
+                <p class="card-bold-text">Без посредников</p>
+                <p class="card-small-text">Мы имеем в наличие все необходимое оборудование для самостоятельного
+                    изготовления фотообоев. А значит вы не переплачиваете посредникам.</p>
+            </div>
+        </div>
+    </div>
+    <img src="images/hamburger-menu-icon-png-white-6.png" alt="hamburger-menu-icon" class="mini-menu" id="mini-menu">
+    <img src="images/whitecloseicon.png" alt="close-ico" class="close-ico" id="close-ico">
+    <ul class="mini-ul-menu" id="mini-ul-menu">
+        <li>Главная</li>
+        <li>Для Детской</li>
+        <li>Для Спальни</li>
+        <li>Для Кухни</li>
+        <li>Контакты</li>
+    </ul>
+    <script type="text/javascript">
+        let hum = document.getElementById('mini-menu');
+        let menu = document.getElementById('mini-ul-menu');
+        let close = document.getElementById('close-ico');
+        let leftArrow = document.getElementById("left-arrow");
+        let rightArrow = document.getElementById("right-arrow");
+        let main = document.getElementById('main');
+        let forWhat = document.getElementById('for'); 
+        let for2 = document.getElementById('for2'); 
+        let price = document.getElementById('price');
+        let m2 = document.getElementById('m2');
+        let active_dot = document.getElementById('active-dot');
+        let active_dot2 = document.getElementById('active-dot2');
+        let active_dot3 = document.getElementById('active-dot3');
+        let count = 0;
+        let leftCount = 0;
+        rightArrow.addEventListener('click', function () {
+            count++;
+            leftCount--;
+            if (count == 0) {
+                main.style.backgroundImage = "url('../images/спальня-1.png')";
+                forWhat.innerText = 'Для зала';
+                for2.innerText = 'БОЛЕЕ 6000 ИДЕЙ ФОТООБОЕВ ДЛЯ ГОСТИННОЙ';
+                price.innerText = '50';
+                active_dot.style.display = 'block';
+                active_dot2.style.display = 'none';
+                active_dot3.style.display = 'none';
+            }
+             if (count == 1) {
+                forWhat.innerText = 'Для кухни';
+                for2.innerText = 'БОЛЕЕ 6000 ИДЕЙ ФОТООБОЕВ ДЛЯ КУХНИ';
+                main.style.backgroundImage = "url('../images/kitchen.jpg')";
+                price.innerText = '70';
+                active_dot.style.display = 'none';
+                active_dot2.style.display = 'block';
+                active_dot3style.display = 'none';
+            }
+
+             if (count == 2) {
+                forWhat.innerText = 'Для спальни';
+                forWhat.style.padding = '2px 0 0 49px';
+                for2.innerText = 'БОЛЕЕ 6000 ИДЕЙ ФОТООБОЕВ ДЛЯ СПАЛЬНИ';
+                main.style.backgroundImage = "url('../images/hall.png')";
+                price.innerText = '45';
+                active_dot.style.display = 'none';
+                active_dot2.style.display = 'none';
+                active_dot3.style.display = 'block';
+            }
+            
+             if (count == 3) {
+                forWhat.innerText = 'Для зала';
+                for2.innerText = 'БОЛЕЕ 6000 ИДЕЙ ФОТООБОЕВ ДЛЯ ГОСТИНОЙ';
+                main.style.backgroundImage = "url('../images/спальня-1.png')"
+                price.innerText = '50';
+                active_dot.style.display = 'block';
+                active_dot2.style.display = 'none';
+                active_dot3.style.display = 'none';
+                count = 0;
+            }
+            if (leftCount < 0) {
+                leftCount = 0;
+            }
+        });
+
+        leftArrow.addEventListener('click', function () {
+            leftCount++;
+            count--;
+
+            if (leftCount == 0) {
+                main.style.backgroundImage = "url('../images/спальня-1.png')";
+                forWhat.innerText = 'Для зала';
+                for2.innerText = 'БОЛЕЕ 6000 ИДЕЙ ФОТООБОЕВ ДЛЯ ГОСТИННОЙ';
+                price.innerText = '50';
+                active_dot.style.display = 'none';
+                active_dot2.style.display = 'none';
+                active_dot3.style.display = 'block';
+            }
+            if (leftCount == 1) {
+                forWhat.innerText = 'Для кухни';
+                for2.innerText = 'БОЛЕЕ 6000 ИДЕЙ ФОТООБОЕВ ДЛЯ КУХНИ';
+                main.style.backgroundImage = "url('../images/kitchen.jpg')";
+                price.innerText = '70';
+                active_dot.style.display = 'none';
+                active_dot2.style.display = 'none';
+                active_dot3.style.display = 'block';
+            }
+            if (leftCount == 2) {
+                forWhat.innerText = 'Для спальни';
+                forWhat.style.padding = '2px 0 0 49px';
+                for2.innerText = 'БОЛЕЕ 6000 ИДЕЙ ФОТООБОЕВ ДЛЯ СПАЛЬНИ';
+                main.style.backgroundImage = "url('../images/hall.png')";
+                price.innerText = '45';
+                active_dot.style.display = 'none';
+                active_dot2.style.display = 'block';
+                active_dot3.style.display = 'none';
+            }
+             if (leftCount == 3) {
+                forWhat.innerText = 'Для зала';
+                for2.innerText = 'БОЛЕЕ 6000 ИДЕЙ ФОТООБОЕВ ДЛЯ ГОСТИНОЙ';
+                main.style.backgroundImage = "url('../images/спальня-1.png')"
+                price.innerText = '50';
+                active_dot.style.display = 'block';
+                active_dot2.style.display = 'none';
+                active_dot3.style.display = 'none';
+                leftCount = 0;
+            }
+             if (count < 0) {
+                count = 0;
+            }
+        });
+        hum.addEventListener('click', function () {
+            this.style.display = 'none';
+            menu.style.display = 'block';
+            close.style.display = 'block';
+        }, false);
+        close.addEventListener('click', function () {
+            this.style.display = 'none';
+            menu.style.display = 'none';
+            hum.style.display = 'block';
+        }, false);
+    </script>
+</body>
+
+
+</html>
